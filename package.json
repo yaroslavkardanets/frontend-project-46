@@ -18,7 +18,7 @@
   "homepage": "https://github.com/yaroslavkardanets/frontend-project-46#readme",
   "dependencies": {
     "comander": "^0.0.1-security",
-    "commander": "^11.0.0"
-  },
-  "devDependencies": {}
+    "commander": "^11.0.0",
+    "lodash": "^4.17.21"
+  }
 }
