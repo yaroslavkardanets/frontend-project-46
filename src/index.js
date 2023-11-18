@@ -1,4 +1,5 @@
 const _ = require('lodash');
+const fs = require('fs');
 
 
 const file1 = {
@@ -19,6 +20,19 @@ const file2 = {
 	"verbose": true,
 	"host": "hexlet.io"
 };
+
+const readFile = (path) => {
+	const getFile = JSON.parse(fs.readFileSync(path));
+	return getFile;
+}
+
+const file3 = readFile('../__fixtures__/file1.json');
+const file4 = readFile('../__fixtures__/file2.json');
+
+// console.log('readFile3 =', readFile('../__fixtures__/file1.json'));
+// console.log('readFile4 =', readFile('../__fixtures__/file2.json'));
+// console.log('readFile4 =', file3);
+// console.log('readFile4 =', file4);
 
 
 const comparison = (path1, path2) => {
@@ -50,7 +64,8 @@ const comparison = (path1, path2) => {
 //   const result = 
 // };
 
-console.log(comparison(file1, file2));
+console.log('1-2 =', comparison(file1, file2));
+console.log('3-4 =', comparison(file3, file4));
 
 
 // export default comparison;
