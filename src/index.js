@@ -1,5 +1,6 @@
 const _ = require('lodash');
 const fs = require('fs');
+const path = require('path');
 
 
 const file1 = {
@@ -21,19 +22,19 @@ const file2 = {
 	"host": "hexlet.io"
 };
 
-const readFile = (path) => {
-	const getFile = JSON.parse(fs.readFileSync(path));
+// function getPath(filePath) {
+// 	const absolutePath = path.isAbsolute(filePath) ? filePath : path.resolve(process.cwd(), filePath);
+//   return absolutePath;
+// }
+
+const readFile = (filePath) => {
+	const absolutePath = path.isAbsolute(filePath) ? filePath : path.resolve(process.cwd(), filePath);
+	const getFile = JSON.parse(fs.readFileSync(absolutePath));
 	return getFile;
 }
 
 const file3 = readFile('../__fixtures__/file1.json');
-const file4 = readFile('../__fixtures__/file2.json');
-
-// console.log('readFile3 =', readFile('../__fixtures__/file1.json'));
-// console.log('readFile4 =', readFile('../__fixtures__/file2.json'));
-// console.log('readFile4 =', file3);
-// console.log('readFile4 =', file4);
-
+const file4 = readFile('/mnt/c/Slow/Hexlet/frontend-project-46/__fixtures__/file2.json');
 
 const comparison = (path1, path2) => {
 	//   console.log(path1);
