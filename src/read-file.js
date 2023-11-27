@@ -17,4 +17,4 @@ console.log(path.resolve('../__fixtures__/file2.json'));
 console.log(readFilePath('/mnt/c/Slow/Hexlet/frontend-project-46/__fixtures__/file2.json'))
 console.log(readFilePath('../__fixtures__/file2.json'))
 
-// export default readFilePath;
+export default readFilePath;
