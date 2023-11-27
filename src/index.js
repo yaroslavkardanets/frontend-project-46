@@ -27,11 +27,11 @@ const file2 = {
 //   return absolutePath;
 // }
 
-const readFile = (filePath) => {
-	const absolutePath = path.isAbsolute(filePath) ? filePath : path.resolve(process.cwd(), filePath);
-	const getFile = JSON.parse(fs.readFileSync(absolutePath));
-	return getFile;
-}
+// const readFile = (filePath) => {
+// 	const absolutePath = path.isAbsolute(filePath) ? filePath : path.resolve(process.cwd(), filePath);
+// 	const getFile = JSON.parse(fs.readFileSync(absolutePath));
+// 	return getFile;
+// }
 
 const file3 = readFile('../__fixtures__/file1.json');
 const file4 = readFile('/mnt/c/Slow/Hexlet/frontend-project-46/__fixtures__/file2.json');
@@ -69,4 +69,4 @@ console.log('1-2 =', comparison(file1, file2));
 console.log('3-4 =', comparison(file3, file4));
 
 
-// export default comparison;
+export default comparison;

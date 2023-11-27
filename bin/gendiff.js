@@ -9,14 +9,27 @@ const fs = require('fs');
 
 // console.log(path);
 
+// const readFilePath = (filePath) => {
+// 	// const absolutePath = path.isAbsolute(filePath) ? filePath : path.resolve(process.cwd(), filePath);
+// 	const absolutePath = path.resolve(process.cwd(), filePath);
+// 	// console.log('absolutePath =', absolutePath);
+// 	const getFile = JSON.parse(fs.readFileSync(absolutePath));
+// 	// console.log('getFile =', getFile);
+// 	return getFile;
+// };
+
 const readFilePath = (filePath) => {
-	// const absolutePath = path.isAbsolute(filePath) ? filePath : path.resolve(process.cwd(), filePath);
+	if (typeof filePath !== 'string') {
+		throw new Error('File path must be a string.');
+	}
+
 	const absolutePath = path.resolve(process.cwd(), filePath);
-	// console.log('absolutePath =', absolutePath);
-	const getFile = JSON.parse(fs.readFileSync(absolutePath));
-	// console.log('getFile =', getFile);
-	return getFile;
+	const fileContent = fs.readFileSync(absolutePath, 'utf-8');
+	const parsedContent = JSON.parse(fileContent);
+	return parsedContent;
 };
+
+
 
 const comparison = (path1, path2) => {
 	const keys1 = Object.keys(path1);
@@ -45,7 +58,8 @@ program
   .description('Compares two configuration files and shows a difference.')
   .version('0.1.0')
   .option('-f, --format <type>', 'output format')
-  .argument('<filepath1> <filepath2>')
+  .argument('<filepath1>')
+  .argument('<filepath2>')
   .action((firstFilePath, secondFilePath) => {
     const firstFile = readFilePath(firstFilePath);
     const secondFile = readFilePath(secondFilePath);

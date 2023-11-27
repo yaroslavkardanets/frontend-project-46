@@ -7,6 +7,7 @@ const readFilePath = (filePath) => {
 	console.log('absolutePath =', absolutePath);
 	const getFile = JSON.parse(fs.readFileSync(absolutePath));
 	console.log('getFile =', getFile);
+	// return JSON.stringify(getFile);
 	return getFile;
 };
 
