@@ -4,9 +4,8 @@ const { program } = require('commander');
 const path = require('path');
 const _ = require('lodash');
 const fs = require('fs');
-import { readFilePath } from '../src/read-file.js'
-// import { readFilePath } from '../frontend-project-46/src/read-file.js';
-import { comparison } from '../src/index.js';
+import readFilePath from '../src/read-file.js'
+import comparison from '../src/index.js';
 
 // console.log(path);
 
