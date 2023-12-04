@@ -8,4 +8,4 @@
 
 ### Making GitHub Action
 
-[![GitHub Actions](https://github.com/yaroslavkardanets/frontend-project-46/.github/workflows/hello-world.yml/badge.svg)]
+[![GitHub Actions](https://github.com/yaroslavkardanets/frontend-project-46/.github/workflows/hello-world.yml/badge.svg)](https://github.com/yaroslavkardanets/frontend-project-46/actions)
